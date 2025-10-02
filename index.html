@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manav Katar | Portfolio</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS (Animate on Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: #333; background: #fff; scroll-behavior: smooth; }
+
+    /* Navbar */
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); padding: 15px 50px;
+          display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); z-index: 1000; }
+    nav h1 { color: #FF6363; font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { color: #FF6363; }
+
+    /* Hero */
+    .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(135deg, #FF6363, #FF9999); color: white; text-align: center; }
+    .hero h1 { font-size: 3rem; }
+    .hero p { font-size: 1.3rem; margin-top: 15px; }
+    .hero .btn { margin-top: 20px; padding: 12px 25px; background: white; color: #FF6363; border-radius: 30px; font-weight: bold; text-decoration: none; transition: 0.3s; }
+    .hero .btn:hover { background: #333; color: white; }
+
+    /* Section */
+    section { padding: 100px 10%; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 50px; color: #FF6363; }
+
+    /* About */
+    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; justify-content: center; }
+    .about img { width: 250px; border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .about img:hover { transform: scale(1.05); }
+    .about p { flex: 1; font-size: 1.1rem; max-width: 600px; }
+
+    /* Skills */
+    .skills { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 25px; }
+    .skill { background: #f5f5f5; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+    .skill:hover { transform: translateY(-5px); }
+    .skill span { font-weight: 600; display: block; margin-bottom: 8px; }
+    .skill-bar { background: #ddd; border-radius: 8px; overflow: hidden; height: 12px; margin: 5px 0; }
+    .skill-progress { height: 12px; background: #FF6363; border-radius: 8px; transition: width 1.5s ease-in-out; }
+    .percent { font-size: 0.9rem; color: #555; font-weight: 500; float: right; }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .project-card { background: #fff; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); padding: 25px; transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-10px); }
+    .project-card h3 { color: #FF6363; margin-bottom: 10px; }
+    .project-card p { margin-bottom: 15px; }
+    .project-card a { text-decoration: none; font-weight: bold; color: #333; transition: 0.3s; }
+    .project-card a:hover { color: #FF6363; }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+    .contact input, .contact textarea { padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
+    .contact button { padding: 12px; background: #FF6363; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .contact button:hover { background: #333; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #f5f5f5; margin-top: 50px; }
+    footer a { margin: 0 10px; color: #333; font-size: 1.5rem; transition: 0.3s; }
+    footer a:hover { color: #FF6363; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      nav { padding: 15px 20px; }
+      .about { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>Manav</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 data-aos="fade-up">Hi, I'm Manav Katar</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Student + Web Designer</p>
+    <a href="#projects" class="btn" data-aos="zoom-in" data-aos-delay="400">View My Work</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 data-aos="fade-up">About Me</h2>
+    <div class="about" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://raw.githubusercontent.com/Manavkatar/MK-Portfolio-AI/main/PP%20PIC.jpeg" alt="Manav Katar">
+      <p>
+        I'm <b>Manav Katar</b>, a student and aspiring web designer passionate about building creative, 
+        user-friendly websites. I enjoy exploring AI tools, photography, and editing, which inspire my design work. 
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 data-aos="fade-up">My Skills</h2>
+    <div class="skills" data-aos="fade-up" data-aos-delay="200">
+      <div class="skill">
+        <span>HTML / CSS</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+        <span class="percent">90%</span>
+      </div>
+
+      <div class="skill">
+        <span>AI Tools</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
+        </div>
+        <span class="percent">80%</span>
+      </div>
+
+      <div class="skill">
+        <span>Photography</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+        <span class="percent">85%</span>
+      </div>
+
+      <div class="skill">
+        <span>Editing</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+        <span class="percent">90%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="projects">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Food Based Site</h3>
+        <p>Built for CodeDay Hyd 2022.</p>
+        <a href="https://www.themigrantkitchen.com/?gad_source=1&gad_campaignid=21794622914&gbraid=0AAAAABwS4lokDx47o58gYy-ScVXMOt4ez&gclid=Cj0KCQjwovPGBhDxARIsAFhgkwRonejrjhiVfCzVWUc3aFbPDcmW7TRCT6rjKXhl0VkhiM2Vb-zC3ZMaArclEALw_wcB" target="_blank">View Project</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Medical Site</h3>
+        <p>Developed for EPOCH Intl. Hackathon 2022-23.</p>
+        <a href="https://5afd2fdc-83e1-46b7-b378-e82ddd6271b3-00-1b6jppwagcvay.pike.replit.dev/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>AI-Based TimeTable Generator</h3>
+        <p>Created for SIH 2025.</p>
+        <a href="https://f4399487-f199-4007-903b-e11fff90d8d8-00-b71z9gbg9x6u.riker.replit.dev:5000/" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <div class="contact" data-aos="fade-up" data-aos-delay="200">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:20px;">Or email me directly at <b>manavkatar1167@gmail.com</b></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Manav Katar | Made with ❤️</p>
+    <div>
+      <a href="https://www.linkedin.com/in/manav-k-859b4a384/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Manavkatar" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
